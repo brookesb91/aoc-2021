@@ -3,7 +3,7 @@ import input from './input';
 const measurements = input.trim().split('\n');
 
 let i = 0;
-let len = measurements.length;
+const len = measurements.length;
 let last = 0;
 let increases = 0;
 
