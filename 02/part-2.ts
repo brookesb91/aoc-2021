@@ -3,22 +3,25 @@ import input from './input';
 class Submarine {
   position: number;
   depth: number;
+  aim: number;
 
   handlers: { [key: string]: { (val: number): void } } = {
     up: (val: number) => {
-      this.depth -= val;
+      this.aim -= val;
     },
     down: (val: number) => {
-      this.depth += val;
+      this.aim += val;
     },
     forward: (val: number) => {
       this.position += val;
+      this.depth += this.aim * val;
     },
   };
 
   constructor() {
     this.position = 0;
     this.depth = 0;
+    this.aim = 0;
   }
 
   command(command: string) {
